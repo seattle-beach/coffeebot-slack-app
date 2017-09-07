@@ -10,7 +10,7 @@ BASE_URL = 'https://cafe.cfapps.io'
 @app.route('/', methods=['POST'])
 def receive_slack_command():
     #json_data = request.get_json(force=True)
-    devices = json.loads(requests.get(BASE_URL + '/allstates').text)
+    devices = json.loads(requests.get(BASE_URL + '/status').text)
 
     attachments = []
     for device in devices:
